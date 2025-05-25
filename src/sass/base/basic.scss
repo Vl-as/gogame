@@ -1,3 +1,5 @@
+@use "/src/sass/base/variables.scss" as *;
+
 h1, h2, h3, h4, h5, h6, p{
     margin: 0;
     padding: 0;
@@ -8,6 +10,25 @@ html{
 }
 
 .container{
-    width: 1160px;
+    max-width: 1160px;
     margin: 0 auto;
+}
+
+@media screen and (max-width: $breakpoint-large-desktop) {
+    .container{
+        max-width: 100%;
+        padding: 0 110px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-desktop) {
+    .container{
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .container{
+        padding: 0 10px;
+    }
 }

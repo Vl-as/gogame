@@ -3,7 +3,8 @@
 .promo {
   height: 100vh;
   padding-top: 240px;
-  overflow: hidden;
+  padding-bottom: 50px;
+  overflow-x: hidden;
   background-image: url(/src/img/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,6 +14,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 60px;
+    align-items: center;
   }
 
   &__text {
@@ -69,33 +71,35 @@
 
   &__cross {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    left: 60%;
+    bottom: -5%;
     animation: rotating 10s linear infinite;
   }
 
   &__boy-container {
     position: relative;
+    display: grid;
+    place-items: center;
   }
 
   &__hole {
-    width: 518.5px;
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
   }
 
   &__boy {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    transform: translate(-10%, -20%);
+    max-width: 100%;
+    position: relative;
+    z-index: 5;
     animation: boy 1s linear;
   }
 
   &__joy {
+    max-width: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(9%, -20%);
+    top: 8%;
+    left: 17%;
     opacity: 0;
     animation: joy 1s linear 1s forwards;
   }
@@ -105,21 +109,22 @@
     gap: 10px;
     padding: 18px 16px;
     position: absolute;
-    z-index: 3;
+    z-index: 6;
     width: 212px;
     height: 95px;
     background-color: $bg-card;
     box-shadow: 0px 10px 20px 0px #eb838266;
     border-radius: 10px;
+    font-size: 10px;
 
     &-glasses {
-      top: -25%;
-      left: -20%;
+      top: 0;
+      left: 0;
     }
 
     &-controller{
       bottom: 0%;
-      right: -20%;
+      left: 65%;
     }
 
     &-description {
@@ -130,34 +135,34 @@
 
     &-title {
       font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
+      font-size: 1em;
+      line-height: 1.2em;
       color: $blue;
     }
 
     &-subtitle {
       font-weight: 700;
-      font-size: 10px;
-      line-height: 10px;
+      font-size: 1em;
+      line-height: 1em;
       color: $color-warm-pink;
     }
 
     &-img {
-      min-width: 84px;
-      min-height: 52px;
-      object-fit: contain;
+      max-width: 84px;
+      max-height: 52px;
     }
 
     &-rate {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 0.4em;
     }
 
     &-review {
       font-weight: 500;
-      font-size: 8px;
-      line-height: 12px;
+      font-size: .8em;
+      line-height: 1.2em;
       color: $blue;
     }
   }
@@ -165,22 +170,21 @@
 
 @keyframes joy {
   0% {
-    transform: translate(9%, -20%) scale(0);
+    transform: scale(0);
     opacity: 0;
   }
   100% {
-    transform: translate(9%, -20%) scale(1);
+    transform:  scale(1);
     opacity: 1;
   }
 }
 
 @keyframes boy {
   0% {
-    transform: translate(-10%, 0%);
+    transform: translate(-10%, 10%);
     opacity: 0;
   }
   100% {
-    transform: translate(-10%, -20%);
     opacity: 1;
   }
 }
@@ -191,5 +195,122 @@
   }
   100% {
     transform: translate(-50%, 50%) rotate(360deg);
+  }
+}
+
+
+
+@media screen and (max-width: $breakpoint-large-desktop) {
+  .promo{
+    padding-top: 200px;
+    &__subtitle{
+      font-size: 58px;
+      &_text-blue{
+        font-size: 52px;
+      }
+    }
+
+    &__description{
+      font-size: 16px;
+    }
+
+    &__joy{
+      max-width: 90%;
+     
+    }
+
+   
+
+  }
+}
+
+@media screen and (max-width: $breakpoint-desktop) {
+  .promo{
+    height: auto;
+    &__card{
+      width: 170px;
+      height: 70px;
+      padding: 8px 6px;
+      
+
+      
+
+      &-img {
+        max-width: 54px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .promo{
+    &__subtitle{
+      margin-top: 15px;
+      font-size: 44px;
+      line-height: 65px;
+      &_text-blue{
+        font-size: 40px;
+      }
+    }
+
+    &__title{
+      &::after{
+        display: none;
+      }
+    }
+
+    &__description{
+      margin-top: 15px;
+    }
+
+    &__cross{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .promo{
+    &__wrapper{
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      align-content: center;
+    }
+
+    &__subtitle{
+      line-height: 55px;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .promo{
+    &__title{
+      font-size: 20px;
+    }
+    &__subtitle{
+      font-size: 40px;
+      &_text-blue{
+        font-size: 35px;
+      }
+    }
+
+    &__card{
+      width: 110px;
+      height: 50px;
+      padding: 2px 3px;
+      font-size: 6px;
+
+      &-review{
+        display: none;
+      }
+
+      &-img {
+        max-width: 40px;
+      }
+    }
   }
 }
