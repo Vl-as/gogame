@@ -1,0 +1,73 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.promo {
+  height: 100vh;
+  padding-top: 220px;
+  background-image: url(/src/img/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ffd9c3;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  &__text{
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 24px;
+    color: $blue;
+  }
+
+  &__subtitle {
+    margin-top: 26px;
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 75px;
+    color: $color-warm-pink;
+    &_text-blue {
+      color: $blue;
+      font-weight: 500;
+      font-size: 58px;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 31px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    color: $violet-muted;
+  }
+
+  &__button{
+    margin-top: 36px;
+  }
+
+  &__cross{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: rotating 10s linear infinite;
+  }
+}
+
+
+@keyframes rotating {
+    0% {
+        transform: translate(-50%, 50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, 50%) rotate(360deg);
+    }
+}

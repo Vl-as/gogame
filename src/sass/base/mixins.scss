@@ -1,0 +1,11 @@
+@mixin button {
+  padding: 0 15px;
+  height: 50px;
+  background: linear-gradient(94.66deg, #4499d9 17.46%, #7367be 87.77%);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+}

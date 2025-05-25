@@ -1,0 +1,7 @@
+@use "/src/sass/base/mixins.scss" as *;
+
+
+.button-start{
+    @include button;
+    width: 180px;
+}
