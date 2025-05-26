@@ -2,6 +2,7 @@
 
 .header {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -10,6 +11,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__logo-link {
+    text-decoration: none;
   }
 
   &__logo {
@@ -31,11 +36,152 @@
     }
 
     &-link {
+      position: relative;
       text-decoration: none;
       font-weight: 500;
       font-size: 18px;
       line-height: 24px;
       color: $blue;
+      transition: all 0.3s linear;
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        border-radius: 20%;
+        height: 2px;
+        transition: width 0.3s linear;
+        background-color: $blue;
+      }
+      &:hover::after {
+        width: 100%;
+        background-color: $color-warm-pink;
+      }
+      &:hover {
+        color: $color-warm-pink;
+      }
+    }
+  }
+  &__burger-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $breakpoint-desktop) {
+  .header {
+    &__logo {
+      width: 257px;
+      height: 70px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .header {
+    &__nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 80px 50px;
+      width: 50vw;
+      transform: translateX(0%) scale(0.1);
+      border-radius: 100%;
+      transition: all 1s cubic-bezier(0.7, 0, 0.2, 1);
+      ul {
+        flex-direction: column;
+      }
+      &.active {
+        transform: translateX(-100%);
+        border-radius: 0;
+      }
+    }
+    &__burger-btn {
+      display: block;
+      position: relative;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      width: 40px;
+      height: 20px;
+      cursor: pointer;
+    }
+    &__burger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $blue;
+      transition: all 0.3s;
+      &::after,
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $blue;
+        transition: all .3s, transform 1s;
+      }
+      &::after {
+        bottom: 0;
+      }
+      &::before {
+        top: 0;
+      }
+    }
+    &__burger-btn.active &__burger-line {
+      background-color: transparent;
+    }
+
+    &__burger-btn:hover {
+      .header__burger-line, .header__burger-line::after, .header__burger-line::before
+       {
+        background-color: $color-warm-pink;
+      }
+    }
+
+    &__burger-btn.active:hover &__burger-line {
+      background-color: transparent;
+    }
+
+    &__burger-btn.active &__burger-line::before{
+      top: 50%;
+      transform: rotate(45deg);
+    }
+    &__burger-btn.active &__burger-line::after{
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .header {
+    &__logo {
+      width: 170px;
+      height: 45px;
+    }
+
+    &__nav{
+      width: 80vw;
+    }
+  }
+}
+
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .header {
+    &__nav{
+      width: 100vw;
+    }
+    &__burger-btn{
+      width: 25px;
+      height: 16px;
     }
   }
 }

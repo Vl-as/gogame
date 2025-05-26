@@ -15,8 +15,9 @@
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
-          <img src="/src/img/logo.svg" alt="logo" class="header__logo" />
-          <nav class="header__nav">
+          <a href="#" class="header__logo-link">          <img src="/src/img/logo.svg" alt="logo" class="header__logo" />
+          </a>
+          <nav id="nav" class="header__nav">
             <ul>
               <li><a href="#" class="header__nav-link">Home</a></li>
               <li><a href="#" class="header__nav-link">About Us</a></li>
@@ -25,6 +26,9 @@
             </ul>
             <a class="button-start" href="#">Get Started Now</a>
           </nav>
+          <button id="burger" class="header__burger-btn">
+            <span class="header__burger-line"></span>
+          </button>
         </div>
       </div>
     </header>

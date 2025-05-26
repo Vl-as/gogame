@@ -9,6 +9,11 @@ html{
     font-family: "Josefin Sans", sans-serif;
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh; /* фиксируем высоту */
+  }
+
 .container{
     max-width: 1160px;
     margin: 0 auto;
