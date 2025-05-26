@@ -80,10 +80,11 @@
     position: relative;
     display: grid;
     place-items: center;
+    padding-right: 10%;
   }
 
   &__hole {
-    max-width: 100%;
+    max-width: 90%;
     position: absolute;
     bottom: 0;
   }
@@ -96,10 +97,10 @@
   }
 
   &__joy {
-    max-width: 100%;
+    max-width: 80%;
     position: absolute;
     top: 8%;
-    left: 17%;
+    left: 15%;
     opacity: 0;
     animation: joy 1s linear 1s forwards;
   }
@@ -119,7 +120,7 @@
 
     &-glasses {
       top: 0;
-      left: 0;
+      right: 65%;
     }
 
     &-controller{
@@ -209,18 +210,9 @@
         font-size: 52px;
       }
     }
-
     &__description{
       font-size: 16px;
     }
-
-    &__joy{
-      max-width: 90%;
-     
-    }
-
-   
-
   }
 }
 
@@ -232,9 +224,6 @@
       height: 70px;
       padding: 8px 6px;
       
-
-      
-
       &-img {
         max-width: 54px;
       }
@@ -274,8 +263,6 @@
     &__wrapper{
       display: flex;
       flex-direction: column-reverse;
-      align-items: center;
-      align-content: center;
     }
 
     &__subtitle{
