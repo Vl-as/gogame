@@ -17,13 +17,10 @@
     height: 78px;
   }
 
-  &__nav-container {
+  &__nav {
     display: flex;
     gap: 55px;
     align-items: center;
-  }
-
-  &__nav {
     ul {
       padding: 0;
       display: flex;
@@ -42,4 +39,3 @@
     }
   }
 }
-
