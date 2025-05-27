@@ -7,6 +7,15 @@
   left: 0;
   right: 0;
   padding: 15px 0;
+
+  &.scrolled{
+    background-color: $bg-nav;
+    .header__nav-link{
+      color: #fff;
+    }
+  }
+  
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -16,6 +25,7 @@
   &__logo-link {
     text-decoration: none;
     transition: all .3s ease-in;
+    outline: none;
     &:hover{
       transform: scale(1.05);
     }
@@ -90,17 +100,20 @@
       right: -100%;
       bottom: 0;
       flex-direction: column;
-      background-color: #fff;
+      background-color: $bg-nav;
       padding: 80px 50px;
-      width: 50vw;
+      width: 50%;
       transform: translateX(0%) scale(0.1);
       border-radius: 100%;
       transition: all 1s cubic-bezier(0.7, 0, 0.2, 1);
       ul {
         flex-direction: column;
       }
+      &-link{
+        color: #fff;
+      }
       &.active {
-        transform: translateX(-100%);
+        transform: translateX(-200%);
         border-radius: 0;
       }
     }
@@ -172,7 +185,10 @@
     }
 
     &__nav{
-      width: 80vw;
+      width: 75%;
+      &.active {
+        transform: translateX(-130%);
+      }
     }
   }
 }
@@ -181,7 +197,10 @@
 @media screen and (max-width: $breakpoint-mobile) {
   .header {
     &__nav{
-      width: 100vw;
+      width: 100%;
+      &.active {
+        transform: translateX(-100%);
+      }
     }
     &__burger-btn{
       width: 25px;

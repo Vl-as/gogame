@@ -109,11 +109,13 @@
     &-glasses {
       top: 0;
       right: 65%;
+      animation: card 5s linear infinite ;
     }
 
     &-controller{
       bottom: 0%;
       left: 65%;
+      animation: card 5s linear infinite reverse;
     }
 
     &-description {
@@ -154,6 +156,24 @@
       line-height: 1.2em;
       color: $blue;
     }
+  }
+}
+
+@keyframes card {
+  0%{
+    transform: translate(4%, 0%)
+  }
+  25%{
+    transform: translate(4%, 4%);
+  }
+  50%{
+    transform: translate(0%, 4%);
+  }
+  75%{
+    transform: translate(0%, 0%);
+  }
+  100%{
+    transform: translate(4%, 0%);
   }
 }
 
