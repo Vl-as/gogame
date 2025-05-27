@@ -1,11 +1,10 @@
 @use "/src/sass/base/variables.scss" as *;
 
 .promo {
-  height: 100vh;
-  padding-top: 240px;
-  padding-bottom: 50px;
+  padding-top: 160px;
+  padding-bottom: 80px;
   overflow-x: hidden;
-  background-image: url(/src/img/bg.png);
+  background-image: url(/src/img/promo/bg-promo.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #ffd9c3;
@@ -37,7 +36,7 @@
       content: "";
       width: 129px;
       height: 29px;
-      background-image: url(/src/img/arrow-promo.svg);
+      background-image: url(/src/img/promo/arrow-promo.svg);
     }
   }
 
