@@ -15,18 +15,27 @@
 
   &__wrapper {
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 40px;
+    justify-items: center;
+    
   }
 
   &__card {
+    $height: 570px;
     padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: $bg-pricing-card;
     box-shadow: 0px 20px 50px 0px #8494cd14;
     border-radius: 20px;
-    max-width: 360px;
+    height: $height;
+    max-width: 400px;
+    width: 100%;
+    transition: height 1s;
 
     &-title {
       font-weight: 600;
@@ -36,7 +45,6 @@
     }
 
     &-subtitle {
-      margin-top: 30px;
       font-weight: 600;
       font-size: 50px;
       line-height: 100%;
@@ -73,8 +81,87 @@
     }
 
     &-btn {
-      margin-top: 45px;
       width: 100%;
+      cursor: pointer;
+    }
+    &.selected {
+      background: url(/src/img/icons/mark-choose.svg) no-repeat 90% 5%,
+        url(/src/img/icons/card-decoration.png) no-repeat left bottom,
+        $pricing-card-selected;
+      height: calc( $height + 40px);
+    }
+
+    &.selected &-title {
+      color: #fff;
+    }
+
+    &.selected &-item {
+      color: #fff;
+      &::before{
+        background: url(/src/img/icons/mark-white.svg) no-repeat center / contain;
+      }
     }
   }
+}
+
+
+@media screen and (max-width: $breakpoint-laptop) {
+    .pricing{
+        &__card{
+            $height: 500px;
+            height: $height;
+        &.selected{
+            height: calc( $height + 40px );
+        }
+
+        &-title{
+            font-size: 28px;
+        }
+
+        &-subtitle{
+            font-size: 40px;
+        }
+        
+    }
+
+    &__wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}}
+
+
+@media screen and (max-width: $breakpoint-tablet) {
+    .pricing{
+        &__wrapper{
+            padding: 0 15px;
+            grid-template-columns: 1fr;
+        }
+
+        &__card{
+            padding: 20px 20px;
+            $height: 440px;
+            height: $height;
+        &.selected{
+            height: calc( $height + 40px );
+        }
+
+            &-subtitle{
+                font-size: 38px;
+                &_l{
+                    font-size: 23px;
+                }
+                &_m{
+                    font-size: 15px;
+                }
+            }
+
+            &-list{
+                gap: 15px;
+            }
+
+            &-item{
+                font-size: 15px;
+            }
+        }
+    }
 }
