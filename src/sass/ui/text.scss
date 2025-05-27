@@ -1,0 +1,54 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.title {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 24px;
+  color: $blue;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 68px;
+  line-height: 75px;
+  color: $color-warm-pink;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+  color: $violet-muted;
+}
+
+@media screen and (max-width: $breakpoint-large-desktop) {
+  .subtitle {
+    font-size: 58px;
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .subtitle {
+    font-size: 44px;
+    line-height: 65px;
+  }
+  .description{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .subtitle {
+    line-height: 55px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 40px;
+  }
+}

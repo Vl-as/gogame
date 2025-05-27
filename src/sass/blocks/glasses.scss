@@ -1,0 +1,80 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.glasses {
+  padding: 80px 0;
+  background-color: $bg-main;
+  background-image: url(/src/img/glasses/bg-glasses.png);
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: 40%, cover;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 60px;
+  }
+
+  &__animation-scene {
+    position: relative;
+  }
+
+  &__img-boy {
+    max-width: 100%;
+  }
+
+  &__img-screen {
+    position: absolute;
+    top: 2%;
+    right: 6%;
+    max-width: 50%;
+    animation: screen 3s linear infinite;
+  }
+
+  &__subtitle {
+    margin-top: 30px;
+  }
+
+  &__description {
+    margin-top: 25px;
+  }
+
+  &__btn {
+    margin-top: 28px;
+  }
+}
+
+@keyframes screen {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .glasses {
+    &__subtitle {
+      margin-top: 15px;
+    }
+    &__description {
+      margin-top: 15px;
+    }
+    &__btn {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .glasses {
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -7,7 +7,7 @@
   background-image: url(/src/img/promo/bg-promo.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ffd9c3;
+  background-color: $bg-main;
 
   &__wrapper {
     display: grid;
@@ -23,10 +23,6 @@
   &__title {
     display: inline-block;
     position: relative;
-    font-weight: 500;
-    font-size: 23px;
-    line-height: 24px;
-    color: $blue;
     &::after {
       display: block;
       position: absolute;
@@ -42,10 +38,6 @@
 
   &__subtitle {
     margin-top: 26px;
-    font-weight: 700;
-    font-size: 68px;
-    line-height: 75px;
-    color: $color-warm-pink;
     &_text-blue {
       color: $blue;
       font-weight: 500;
@@ -58,13 +50,9 @@
 
   &__description {
     margin-top: 31px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 29px;
-    color: $violet-muted;
   }
 
-  &__button {
+  &__btn {
     margin-top: 36px;
   }
 
@@ -203,22 +191,16 @@
 
 @media screen and (max-width: $breakpoint-large-desktop) {
   .promo{
-    padding-top: 200px;
     &__subtitle{
-      font-size: 58px;
       &_text-blue{
         font-size: 52px;
       }
-    }
-    &__description{
-      font-size: 16px;
     }
   }
 }
 
 @media screen and (max-width: $breakpoint-desktop) {
   .promo{
-    height: auto;
     &__card{
       width: 170px;
       height: 70px;
@@ -235,8 +217,6 @@
   .promo{
     &__subtitle{
       margin-top: 15px;
-      font-size: 44px;
-      line-height: 65px;
       &_text-blue{
         font-size: 40px;
       }
@@ -252,6 +232,10 @@
       margin-top: 15px;
     }
 
+    &__btn{
+      margin-top: 15px;
+    }
+
     &__cross{
       display: none;
     }
@@ -264,22 +248,13 @@
       display: flex;
       flex-direction: column-reverse;
     }
-
-    &__subtitle{
-      line-height: 55px;
-    }
-
   }
 }
 
 
 @media screen and (max-width: $breakpoint-mobile) {
   .promo{
-    &__title{
-      font-size: 20px;
-    }
     &__subtitle{
-      font-size: 40px;
       &_text-blue{
         font-size: 35px;
       }
