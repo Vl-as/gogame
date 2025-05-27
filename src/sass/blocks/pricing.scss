@@ -1,0 +1,80 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.pricing {
+  padding: 80px 0;
+  background-color: $bg-main;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-top: 23px;
+  }
+
+  &__wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+  }
+
+  &__card {
+    padding: 40px 35px;
+    background-color: $bg-pricing-card;
+    box-shadow: 0px 20px 50px 0px #8494cd14;
+    border-radius: 20px;
+    max-width: 360px;
+
+    &-title {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 100%;
+      color: $blue;
+    }
+
+    &-subtitle {
+      margin-top: 30px;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 100%;
+      color: $color-warm-pink;
+      &_l {
+        font-size: 27px;
+      }
+      &_m {
+        font-size: 18px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 0;
+    }
+
+    &-item {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      color: $violet-muted;
+      list-style-type: none;
+      &::before {
+        display: inline-block;
+        content: "";
+        width: 18px;
+        height: 18px;
+        background: url(/src/img/icons/mark-blue.svg) no-repeat center / contain;
+        margin-right: 14px;
+      }
+    }
+
+    &-btn {
+      margin-top: 45px;
+      width: 100%;
+    }
+  }
+}
