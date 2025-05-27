@@ -1,0 +1,83 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.console {
+  padding: 80px 0;
+  background: url(/src/img/console/bg-console.png) no-repeat center / cover,
+    url(/src/img/console/bg-joystick.png) no-repeat left / 35%;
+  background-color: $bg-main;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: center;
+  }
+
+  &__subtitle {
+    margin-top: 30px;
+  }
+
+  &__description {
+    margin-top: 25px;
+  }
+
+  &__btn {
+    margin-top: 30px;
+  }
+
+  &__animation-scene {
+    position: relative;
+  }
+
+  &__joystick {
+    max-width: 100%;
+  }
+
+  &__big-wheel {
+    position: absolute;
+    top: 5%;
+    max-width: 24%;
+    left: 55%;
+    animation: wheel 10s linear infinite;
+  }
+
+  &__small-wheel {
+    position: absolute;
+    top: 21%;
+    left: 44%;
+    max-width: 15%;
+    animation: wheel 10s linear infinite reverse;
+  }
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+  .console {
+    &__subtitle {
+      margin-top: 15px;
+    }
+    &__description {
+      margin-top: 15px;
+    }
+    &__btn {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
+  .console {
+    &__wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
