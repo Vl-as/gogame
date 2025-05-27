@@ -1,0 +1,84 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+  padding: 25px 0;
+  background-color: $bg-main;
+  border-top: 1.5px solid $violet-muted;
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__logo {
+    width: 238px;
+    &-link {
+      text-decoration: none;
+      transition: all .3s ease-in;
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: $violet-muted;
+  }
+
+  &__icons{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__icon-link{
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $blue;
+    font-size: 21px;
+    background-color: $bg-pricing-card;
+    transition: all .3s ease-in;
+    &:hover{
+        background-color: $violet-muted;
+        color: #fff;
+    }
+  }
+  &__icon{
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    &::before{
+        margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-laptop) {
+    .footer{
+        &__logo{
+            width: 200px;
+        }
+        &__text {
+            order: 1;
+            width: 100%;
+          }
+    }
+}
+
+@media screen and (max-width: $breakpoint-mobile){
+    .footer{
+        &__wrapper {
+            justify-content: center;
+          }
+    }
+}
